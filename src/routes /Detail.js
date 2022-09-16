@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
 
 function Detail({ shoes }) {
   let { id } = useParams();
