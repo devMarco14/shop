@@ -1,12 +1,24 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import styled from "styled-components";
 
 function Detail({ shoes }) {
+  let [alert, setAlert] = useState(true);
+
   let { id } = useParams();
   let shoesData = shoes.find((i) => i.id == id);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setAlert(false);
+    }, 2000);
+    return () => {}; //clean up function
+  }, []);
+
   return (
     <div className="container">
+      {alert == true ? (
+        <div className="alert alert-warning">2초이내 구매시 할인</div>
+      ) : null}
       <div className="row">
         <div className="col-md-6">
           <img

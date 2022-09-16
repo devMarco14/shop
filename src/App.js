@@ -24,7 +24,7 @@ function App() {
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                navigate("/detail");
+                navigate("/detail/");
               }}
             >
               Detail
@@ -42,7 +42,7 @@ function App() {
               <div className="container">
                 <div className="row">
                   {shoes.map((id, index) => (
-                    <Card shoes={shoes[index]} i={index} />
+                    <Card key={id} shoes={shoes[index]} i={index} />
                   ))}
                 </div>
               </div>
